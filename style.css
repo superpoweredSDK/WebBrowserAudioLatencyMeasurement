@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,600&display=swap');
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* body, main boxes */
+body { background-color: transparent; color: #ffffff; font-family: 'Poppins', 'Roboto', sans-serif; line-height: 1.5; }
+main { max-width: 600px; height: 500px; overflow: scroll; background: linear-gradient(118.12deg, #30247d 0%, #65cafa 200%); margin: auto; }
+footer { max-width: 600px; height: 100px; font-size: 80%; margin: auto; text-align: left; background-color: #ffffff; color: #333333; }
+footer div { margin-top: 5px; }
+section { padding: 1rem; text-align: center; display: none; }
+h1, h2 { font-weight: 600; font-size: 1.3rem; margin: 1rem 0; }
+h2, h3 { margin: 2rem 0; }
+h3, h4 { font-weight: 600; }
+h1, h5 { font-size: 1rem; text-align: center; margin-bottom: 0; }
+h5 { font-size: 0.9rem; margin-bottom: 1rem; }
+nav { background-color: rgba(101, 202, 250, 0.5); text-align: center; }
+nav a { display: inline-block; padding: 0.5rem 1rem; text-decoration: none; color: #ffffff; font-weight: 600; text-transform: uppercase; }
+nav a.selected { text-decoration: underline; }
+p, ol, h4 { text-align: left; margin: 1rem 0; }
+div#result { background-color: rgba(101, 202, 250, 0.5); color: #ffffff; margin: 1rem 0; padding: 1rem; text-align: left; }
+ol { list-style-type: decimal; }
+li { margin-left: 2rem; }
+button { outline: none; cursor: pointer; background-color: #30247d; color: #ffffff; display: block; padding: 0.5rem 2rem; border-radius: 0.5rem; border: none; font-size: 1.3rem; font-weight: 600; text-align: center; transition: background-color 0.25s, color 0.25s; margin: 2rem auto; }
+button:hover { background-color: #65cafa; }
+div#content a { display: block; margin: 2rem 0; text-decoration: underline; color: #ffffff; cursor: pointer; text-align: left; }
+p#progressBody { width: 100%; height: 1rem; background-color: rgba(101, 202, 250, 0.5); display: block; }
+span#progressBar { display: block; height: 1rem; width: 0%; background-color: #ffffff; }
+pre { white-space: normal; text-align: left; border: 1px solid #cccccc; padding: 1rem; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+	<script src="main.js" type="module"></script>
+    <title>Superpowered Web Browser Audio Latency Test</title>
+</head>
+<body>
+    <main>
+        <h1>Superpowered Web Browser Audio Latency Test Widget</h1>
+        <h5>Measure the round-trip audio latency of your web browser.</h5>
+        <nav id="nav">
+            <a href="#measure">Measure</a>
+            <a href="#why-and-how">Why? And How?</a>
+            <a href="#embed">Embed</a>
+        </nav>
+        <section id="why-and-how">
+            <h4>Why?</h4>
+            <p>Low round-trip audio latency is a strong indicator of how well any web browser and the underlying device is optimized for professional audio applications. Lower audio latency provides significant benefits to users of all sorts of apps like music production, games, augmented hearing apps, VOIP and other interactive apps.</p>
+
+            <h4>How does this Web Browser Audio Latency Test work?</h4>
+            <p>The test emits a beep using device speakers that it listens for on the device's microphone. The time difference between emission and capture of the beep is the lag or audio latency. Lower is better, and 10ms or lower is considered professional audio quality.</p>
+        </section>
+        <section id="measure">
+            <div id="prepare">
+                <h4>Checklist before start:</h4>
+                <ol>
+                    <li>Make sure you are in a quiet place (so the browser can hear itself).</li>
+                    <li>Set both input and output audio volume to near maximum. This may be LOUD.</li>
+                </ol>
+                <p>Note: not all browsers on all devices will allow the browser permission to the speakers and microphone. If they don't, the test will not function.</p>
+            </div>
+
+            <div id="content"></div>
+        </section>
+        <section id="embed">
+            <h4>Embed this in a webpage:</h4>
+            <p><pre><code>
+                &lt;iframe src="https://superpowered.com/weblatency/" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0" height="600px" width="600px" allowfullscreen&gt;&lt;/iframe&gt;
+            </code></pre></p>
+        </section>
+    </main>
+    <footer><div id="thisdevice"></div><a href="https://superpowered.com/webbrowserlatency" rel="nofollow" target="_blank">Learn more about interactive audio in the browser.</a></footer>
+</body>
+</html>
