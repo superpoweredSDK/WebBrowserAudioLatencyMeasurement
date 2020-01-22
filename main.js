@@ -20,7 +20,7 @@ class app {
             browser: '?',
             browserVersion: '?',
             buffersize: audioWorklet ? 128 : 512,
-            samplerate: 48000,
+            samplerate: '?',
             audioWorklet: audioWorklet
         };
         app.runningon = '?';
@@ -146,7 +146,7 @@ class app {
             app.audioNode = app.audioContext.createScriptProcessor(app.data.buffersize, 2, 2);
 
             app.audioNode.onaudioprocess = function(e) {
-                app.latencyMeasurer.processInput(e.inputBuffer.getChannelData(0), e.inputBuffer.getChannelData(1), app.audioContext.sampleRate, e.inputBuffer.length);
+                app.latencyMeasurer.processInput(e.inputBuffer.getChannelData(0), e.inputBuffer.getChannelData(1), app.data.samplerate, e.inputBuffer.length);
                 app.latencyMeasurer.processOutput(e.outputBuffer.getChannelData(0), e.outputBuffer.getChannelData(1));
 
                 if (app.lastState != app.latencyMeasurer.state) {
@@ -164,7 +164,7 @@ class app {
                     constructor(audioContext, moduleInstance, name) {
                         super(audioContext, name, {
                             'processorOptions': {
-                                'samplerate': app.audioContext.sampleRate
+                                'samplerate': app.data.samplerate
                             },
                             'outputChannelCount': [2]
                         });
@@ -183,7 +183,8 @@ class app {
         document.getElementById('prepare').style.display = 'none';
         app.content.innerHTML = '<h2>Initializing...</h2>';
         let AudioContext = window.AudioContext || window.webkitAudioContext || false;
-        app.audioContext = new AudioContext({ sampleRate: app.data.samplerate });
+        app.audioContext = new AudioContext();
+        app.data.samplerate = app.audioContext.sampleRate;
         let constraints = {
             'echoCancellation': false,
             'autoGainControl': false,
