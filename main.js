@@ -137,7 +137,9 @@ class app {
     static onAudioPermissionGranted(inputStream) {
         app.inputStream = inputStream;
         let audioTracks = inputStream.getAudioTracks();
-        for (let audioTrack of audioTracks) audioTrack.applyConstraints({ autoGainControl: false, echoCancellation: false, noiseSuppression: false });
+        for (let audioTrack of audioTracks) {
+            audioTrack.applyConstraints({ autoGainControl: false, echoCancellation: false, noiseSuppression: false });
+        }
 
         if (!app.data.audioWorklet) {
             app.latencyMeasurer = new latencyMeasurer();
@@ -187,8 +189,9 @@ class app {
         app.data.samplerate = app.audioContext.sampleRate;
         let constraints = {
             'echoCancellation': false,
+            'disableLocalEcho': false,
             'autoGainControl': false,
-            'audio': { mandatory: { googAutoGainControl: false, googAutoGainControl2: false, googEchoCancellation: false, googNoiseSuppression: false } },
+            'audio': { mandatory: { googAutoGainControl: false, googAutoGainControl2: false, googEchoCancellation: false, googNoiseSuppression: false, googHighpassFilter: false, googEchoCancellation2: false, googNoiseSuppression2: false, googDAEchoCancellation: false, googNoiseReduction: false } },
             'video': false
         };
         navigator.getUserMediaMethod = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
