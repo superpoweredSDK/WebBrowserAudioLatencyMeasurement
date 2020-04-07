@@ -185,7 +185,7 @@ class app {
         document.getElementById('prepare').style.display = 'none';
         app.content.innerHTML = '<h2>Initializing...</h2>';
         let AudioContext = window.AudioContext || window.webkitAudioContext || false;
-        app.audioContext = new AudioContext();
+        app.audioContext = new AudioContext({ latencyHint: 0 });
         app.data.samplerate = app.audioContext.sampleRate;
         let constraints = {
             'echoCancellation': false,
