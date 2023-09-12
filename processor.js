@@ -11,6 +11,7 @@ class MyProcessor extends AudioWorkletProcessor {
     }
 
     process(inputs, outputs, parameters) {
+        if(!inputs[0].length) return
         let inBufferL = null, inBufferR = null, outBufferL = null, outBufferR = null;
         if (typeof inputs.getChannelData === 'function') {
             inBufferL = inputs.getChannelData(0);
