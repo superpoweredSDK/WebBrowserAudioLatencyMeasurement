@@ -43,6 +43,11 @@ class latencyMeasurer {
     }
 
     processInput(left, right, _samplerate, numberOfSamples) {
+        // Possible fix for Firefox
+        /*if (!left || !right) {
+            console.error("Undefined buffers received:", { left, right });
+            return;
+        }*/
         this.rampdec = -1.0;
         this.samplerate = _samplerate;
         this.buffersize = numberOfSamples;

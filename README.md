@@ -11,3 +11,7 @@ The test emits a beep using device speakers that it listens for on the device's 
 ## Homepage (with latency data)
 
 https://superpowered.com/webbrowserlatency
+
+## Run it locally
+
+`python3 -m http.server`
